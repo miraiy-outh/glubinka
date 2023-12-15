@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Inter);
+
+:root {
+    --primary-color: #FF0024;
+    --bg-color: #FFFFFF;
+    --main-color: #121212;
+    --secondary-color: #5A607F;
+    --lightgray-color: #D9E4FF;
+    --gray-color: #5E5E5E;
+    --transparent: rgba(0, 0, 0, 0);
+
+    --paragraph-size: 16px;
+
+    --medium-weight: 500;
+    --semibold-weight: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}

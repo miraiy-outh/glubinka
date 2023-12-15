@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    background-color: var(--main-color);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 64px;
+    min-width: 1200px;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1440px;
+        width: 100%;
+        gap: 100px;
+
+        &__subcontainer {
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+            width: 100%;
+        }
+    }
+
+
+}
