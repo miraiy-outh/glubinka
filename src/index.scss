@@ -9,8 +9,10 @@
     --gray-color: #5E5E5E;
     --transparent: rgba(0, 0, 0, 0);
 
+    --subtitle2-size: 24px;
     --paragraph-size: 16px;
 
+    --regular-weight: 400;
     --medium-weight: 500;
     --semibold-weight: 600;
 }
@@ -20,4 +22,19 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter';
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-center {
+    justify-content: center;
+    align-items: center;
 }

@@ -1,27 +1,26 @@
 @import "../../index.scss";
 
-.header {
+.footer {
     display: flex;
     background-color: var(--main-color);
     @include flex-center;
     width: 100%;
-    padding: 10px 64px;
+    padding: 40px 64px;
     min-width: 1440px;
 
     &__container {
-        @include flex-row;
+        @include flex-column;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         max-width: 1440px;
         width: 100%;
         gap: 100px;
 
         &__subcontainer {
             @include flex-row;
+            justify-content: space-between;
             gap: 100px;
             width: 100%;
         }
     }
-
-
 }

@@ -5,18 +5,18 @@ import { Search } from "./search/search";
 
 export function Header() {
     return (
-        <div className="header">
+        <>
+            <div className="header">
+                <div className="header__container">
+                    <div className="header__container__subcontainer">
+                        <Logo />
+                        <Search />
+                    </div>
 
-            <div className="header__container">
-                <div className="header__container__subcontainer">
-                    <Logo />
-                    <Search />
+                    <Icons />
                 </div>
-
-                <Icons />
             </div>
+        </>
 
-
-        </div>
     )
 }

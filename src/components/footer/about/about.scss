@@ -1,0 +1,25 @@
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 120px;
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+
+        &__header {
+            color: var(--bg-color);
+            font-size: var(--subtitle2-size);
+            font-weight: var(--medium-weight);
+        }
+
+        &__text {
+            color: var(--lightgray-color);
+            font-size: var(--paragraph-size);
+            font-weight: var(--medium-weight);
+        }
+    }
+}

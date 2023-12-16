@@ -1,0 +1,14 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 322px;
+
+    &__text {
+        color: var(--bg-color);
+        font-size: var(--paragraph-size);
+        font-weight: var(--medium-weight);
+    }
+}
