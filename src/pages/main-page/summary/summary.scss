@@ -1,5 +1,6 @@
 .summary {
     display: grid;
+    grid-template-columns: 4fr;
     grid-template-areas: "a a a a" "b b c c" "d d d e";
     gap: 20px;
     max-width: 1440px;
@@ -46,6 +47,7 @@
             bottom: 40%;
             margin-left: 80px;
             padding: 0;
+            opacity: 1;
 
             &__text {
                 width: 80%;

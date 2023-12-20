@@ -1,0 +1,54 @@
+.collection {
+
+    position: relative;
+
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        height: 444px;
+    }
+
+    &:hover>&__info,
+    &:hover>.shadow__c {
+        opacity: 1;
+    }
+
+    &__info {
+        position: absolute;
+        z-index: 2;
+        top: 316px;
+        left: 0;
+        padding-left: 48px;
+        opacity: 0;
+
+        &__header {
+            font-size: var(--main-page-size);
+            color: var(--bg-color);
+            font-weight: var(--bold-weight);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        &__details {
+            font-size: var(--paragraph-size);
+            color: var(--bg-color);
+            font-weight: var(--medium-weight);
+            padding-left: 2px;
+            max-width: 300px;
+        }
+    }
+
+    .shadow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 1;
+    }
+
+    .shadow__c {
+        box-shadow: inset 0px -200px 100px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+    }
+
+}
