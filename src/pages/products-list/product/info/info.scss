@@ -1,0 +1,19 @@
+@import "../../../../index.scss";
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__name {
+        color: var(--secondary-color);
+        font-size: var(--paragraph-size);
+        font-weight: var(--semibold-weight);
+    }
+
+    &__price {
+        color: var(--main-color);
+        font-size: var(--subtitle2-size);
+        font-weight: var(--semibold-weight);
+    }
+}

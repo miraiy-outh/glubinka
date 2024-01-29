@@ -1,0 +1,16 @@
+.slider {
+    position: absolute;
+    flex-direction: row;
+    gap: 10px;
+
+    &__rect {
+        width: 68px;
+        height: 8px;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.active {
+    background-color: white;
+}

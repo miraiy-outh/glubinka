@@ -1,0 +1,20 @@
+.images {
+    position: relative;
+}
+
+.image {
+    width: 325px;
+    height: 327px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.slider {
+    display: none;
+    left: 10px;
+    bottom: 10px;
+}
+
+.images:hover>.slider {
+    display: flex;
+}
