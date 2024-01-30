@@ -1,0 +1,29 @@
+@import "../../../index.scss";
+
+.filter-list {
+    @include flex-column;
+    gap: 30px;
+    flex: 1 0 0;
+    padding: 20px;
+    background: var(--bg-subcolor);
+    border: var(--subborder);
+
+    &__header {
+        @include flex-row;
+        justify-content: space-between;
+        align-items: baseline;
+
+        &__title {
+            color: var(--main-color);
+            font-size: var(--subtitle2-size);
+            font-weight: var(--semibold-weight);
+        }
+
+        &__reset {
+            color: var(--primary-color);
+            font-size: var(--paragraph-size);
+            font-weight: var(--semibold-weight);
+            border: 0px;
+        }
+    }
+}

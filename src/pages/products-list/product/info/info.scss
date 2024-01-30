@@ -1,8 +1,7 @@
 @import "../../../../index.scss";
 
 .info {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 10px;
 
     &__name {

@@ -1,5 +1,6 @@
+@import "../../../../index.scss";
+
 .options {
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
     gap: 20px;
 }
