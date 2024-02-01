@@ -1,3 +1,4 @@
+import { DetailsFilter } from "./details-filter/details-filter"
 import "./filter-list.scss"
 import { PriceFilter } from "./price-filter/price-filter"
 
@@ -10,6 +11,7 @@ export function FilterList() {
             </div>
 
             <PriceFilter />
+            <DetailsFilter />
         </div>
     )
 }

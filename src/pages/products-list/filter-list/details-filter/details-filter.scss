@@ -1,0 +1,6 @@
+@import "../../../../index.scss";
+
+.details-filter {
+    @include flex-column;
+    gap: 30px;
+}
