@@ -13,34 +13,48 @@
         gap: 10px;
     }
 
-    &__range {
+    &__slider {
         position: relative;
-        -webkit-appearance: none;
-        accent-color: var(--primary-color);
-        height: 4px;
-        border-radius: 2px;
-        background-color: var(--lightgray-color);
+        margin-top: 10px;
+        ;
+
+        &__rail {
+            position: absolute;
+            z-index: 1;
+            height: 4px;
+            width: 100%;
+            background: var(--lightgray-color);
+            border-radius: 2px;
+        }
+
+        &__process {
+            position: absolute;
+            z-index: 2;
+            height: 4px;
+            width: 50%;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        &__dot {
+            position: absolute;
+            z-index: 5;
+            height: 20px;
+            width: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            top: -8px;
+
+            &__min {
+                left: 0;
+            }
+
+            &__max {
+                left: 49%;
+            }
+        }
     }
 
-    &__range::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: var(--primary-color);
-        cursor: pointer;
-    }
-
-    &__range::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        border-radius: 2px;
-        background: var(--primary-color);
-    }
 }
 
 .price {

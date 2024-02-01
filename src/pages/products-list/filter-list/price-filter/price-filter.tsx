@@ -26,10 +26,12 @@ export function PriceFilter() {
                     </div>
                 </div>
 
-                <input
-                    className="price-filter__range"
-                    type="range"
-                />
+                <div className="price-filter__slider">
+                    <div className="price-filter__slider__rail" />
+                    <div className="price-filter__slider__process" />
+                    <div className="price-filter__slider__dot price-filter__slider__dot__min" />
+                    <div className="price-filter__slider__dot price-filter__slider__dot__max" />
+                </div>
             </div>
         </div>
     )
