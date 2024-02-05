@@ -1,0 +1,23 @@
+@import "../../../index.scss";
+
+.pagination {
+    @include flex-row;
+    align-items: center;
+    gap: 10px;
+
+    &__container {
+        @include flex-column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        // background: var(--primary-color);
+    }
+
+    &__page {
+        color: var(--main-color);
+        font-size: var(--paragraph-size);
+        font-weight: var(--medium-weight);
+    }
+}
