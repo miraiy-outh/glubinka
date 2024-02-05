@@ -1,0 +1,40 @@
+@import "../../../../index.scss";
+
+.colors {
+    @include flex-column;
+    gap: 24px;
+
+    &__title {
+        color: var(--main-color);
+        font-size: var(--subtitle2-size);
+        font-weight: var(--medium-weight);
+    }
+
+    &__container {
+        @include flex-row;
+        gap: 13px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        max-width: 500px;
+
+        &__subcontainer {
+            @include flex-column;
+            justify-content: center;
+            align-items: center;
+            width: 107px;
+            height: 51px;
+            border: 1px solid var(--main-color);
+        }
+
+    }
+}
+
+.color {
+    color: var(--main-color);
+    font-size: var(--paragraph-size);
+    font-weight: var(--semibold-weight);
+}
+
+.chosen {
+    border: 1px solid var(--primary-color);
+}

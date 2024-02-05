@@ -15,21 +15,21 @@ type TMockSummaryProps = {
     header: string
 }
 
-type TSizeValue = {
+export type TSizeValue = {
     size: 'S' | 'M' | 'L' | 'XL' | 'ONE',
     isExist: boolean
 }
-type TColorValue = {
+export type TColorValue = {
     title: string,
     hex: string,
     isExist: boolean
 }
-type TDetailInfo = {
+export type TDetailInfo = {
     title: string,
     value: string
 }
 
-type TMockProductProps = {
+export type TMockProductProps = {
     id: number,
     name: string,
     price: number,
@@ -161,7 +161,7 @@ export const mockProductsInfo: TMockProductProps[] = [
                 title: "Чёрный",
                 hex: "#000000",
                 isExist: true
-            }
+            },
         ],
         images: [
             "https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",

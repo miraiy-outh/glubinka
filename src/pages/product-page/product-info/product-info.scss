@@ -1,0 +1,33 @@
+@import "../../../index.scss";
+
+.product-info {
+    @include flex-column;
+    gap: 36px;
+
+    &__header {
+        @include flex-column;
+        gap: 16px;
+
+        &__title {
+            color: var(--main-color);
+            font-size: var(--subtitle3-size);
+            font-weight: var(--bold-weight);
+        }
+
+        &__price {
+            color: var(--secondary-color);
+            font-size: var(--subtitle3-size);
+            font-weight: var(--bold-weight);
+        }
+    }
+
+    &__container {
+        @include flex-column;
+        gap: 48px;
+
+        &__subcontainer {
+            @include flex-row;
+            gap: 30px;
+        }
+    }
+}
