@@ -81,3 +81,15 @@
     font-size: var(--paragraph-size);
     font-weight: var(--bold-weight);
 }
+
+@mixin product-details-title {
+    color: var(--main-color);
+    font-size: var(--subtitle2-size);
+    font-weight: var(--medium-weight);
+}
+
+@mixin product-details-text {
+    color: var(--secondary-color);
+    font-size: var(--paragraph-size);
+    font-weight: var(--medium-weight);
+}

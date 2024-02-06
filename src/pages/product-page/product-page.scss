@@ -4,7 +4,6 @@
     @include flex-column;
     align-items: center;
     min-width: 1570px;
-    padding-bottom: 180px;
 
     &__container {
         @include flex-row;

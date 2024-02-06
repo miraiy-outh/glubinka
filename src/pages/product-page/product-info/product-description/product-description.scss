@@ -1,0 +1,20 @@
+@import "../../../../index.scss";
+
+.product-description {
+    @include flex-column;
+    gap: 48px;
+
+    &__container {
+        @include flex-column;
+        gap: 24px;
+    }
+
+    &__title {
+        @include product-details-title;
+    }
+
+    &__info {
+        @include product-details-text;
+        line-height: 150%;
+    }
+}

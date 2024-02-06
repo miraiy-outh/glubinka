@@ -5,9 +5,7 @@
     gap: 24px;
 
     &__title {
-        color: var(--main-color);
-        font-size: var(--subtitle2-size);
-        font-weight: var(--medium-weight);
+        @include product-details-title;
     }
 
     &__help {

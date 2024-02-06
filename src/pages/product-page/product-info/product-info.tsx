@@ -4,6 +4,7 @@ import { Favorites } from "../../../components/icons-svg/favorites";
 import { Cart } from "../../../components/icons-svg/cart";
 import { Sizes } from "./sizes/sizes";
 import { Colors } from "./colors/colors";
+import { ProductDescription } from "./product-description/product-description";
 
 export function ProductInfo({ productInfo }: { productInfo: TMockProductProps }) {
     let iconSize = 48;
@@ -32,6 +33,10 @@ export function ProductInfo({ productInfo }: { productInfo: TMockProductProps })
                         height={iconSize}
                     />
                 </div>
+                <ProductDescription
+                    description={productInfo.description}
+                    details={productInfo.details}
+                />
             </div>
 
         </div>
