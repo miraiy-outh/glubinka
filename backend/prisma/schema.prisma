@@ -23,7 +23,6 @@ model Product {
 model Size {
     id       String            @id @default(uuid())
     size     String
-    isExist  Boolean
     products SizesOfProducts[]
 }
 
@@ -64,34 +63,36 @@ model Image {
 model SizesOfProducts {
     product   Product @relation(fields: [productId], references: [id])
     productId String
-    Size      Size    @relation(fields: [sizeId], references: [id])
+    size      Size    @relation(fields: [sizeId], references: [id])
     sizeId    String
+    isExist   Boolean
 
     @@id([productId, sizeId])
 }
 
 model ColorsOfProducts {
-    Product   Product @relation(fields: [productId], references: [id])
+    product   Product @relation(fields: [productId], references: [id])
     productId String
-    Color     Color   @relation(fields: [colorId], references: [id])
+    color     Color   @relation(fields: [colorId], references: [id])
     colorId   String
+    isExist   Boolean
 
     @@id([productId, colorId])
 }
 
 model TypesOfProducts {
-    Product   Product @relation(fields: [productId], references: [id])
+    product   Product @relation(fields: [productId], references: [id])
     productId String
-    Type      Type    @relation(fields: [typeId], references: [id])
+    type      Type    @relation(fields: [typeId], references: [id])
     typeId    String
 
     @@id([productId, typeId])
 }
 
 model ProductsInCollections {
-    Product      Product    @relation(fields: [productId], references: [id])
+    product      Product    @relation(fields: [productId], references: [id])
     productId    String
-    Collection   Collection @relation(fields: [collectionId], references: [id])
+    collection   Collection @relation(fields: [collectionId], references: [id])
     collectionId String
 
     @@id([productId, collectionId])
