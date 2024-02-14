@@ -1,9 +1,8 @@
-import express, { Request, Response } from 'express';
+import { Request, Response } from 'express';
 import prisma from "../lib/prisma";
 import { TProductProps } from "../types/product-types";
 import { TResponseType } from '../types/root-types';
 import { Product } from '@prisma/client';
-import { findProduct } from './find-product';
 
 interface TCreateProductRequest extends Request {
     body: TProductProps
@@ -83,12 +82,10 @@ export async function createProduct(req: TCreateProductRequest, res: Response<TR
             }
         })
 
-        const product = await findProduct(createdProduct.id)
-
         res.send({
             success: true,
             message: "Product creating is successful.",
-            data: product
+            data: createdProduct
         });
     } catch (error) {
         res.send({
