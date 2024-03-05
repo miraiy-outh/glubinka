@@ -110,12 +110,12 @@ type TProductsActions = TProductsInitAction | TProductsPriceFilterChangeAction |
 const defaultState : TProductsState = {
     products: [],
     filterValues: {
-        prices: [],
-        materials: [],
-        colors: []
+        prices: [0, 100],
+        materials: ['Хлопок', 'Шёлк', 'Шерсть'],
+        colors: ['Белый', 'Чёрный', 'Синий']
     },
     filter: {
-        priceFilter: [],
+        priceFilter: [0, 100],
         materialFilter: [],
         colorFilter: []
     },

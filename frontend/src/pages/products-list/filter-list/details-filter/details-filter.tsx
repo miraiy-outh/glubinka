@@ -1,28 +1,29 @@
+import { useSelector } from "../../../../hooks/redux-hooks"
+import { productsColorFilterSelector, productsColorSelector, productsMaterialFilterSelector, productsMaterialSelector } from "../../../../services/selectors/products-selectors"
 import "./details-filter.scss"
 import { Details } from "./details/details"
 
 export function DetailsFilter() {
-    const detailsValues = [
-        {
-            name: "Материал",
-            values: ["Хлопок", "Шёлк", "Шерсть"]
-        },
-
-        {
-            name: "Цвет",
-            values: ["Белый", "Черный", "Синий"]
-        },
-    ]
+    const materials = useSelector(productsMaterialSelector)
+    const colors = useSelector(productsColorSelector)
+    const materialValues = useSelector(productsMaterialFilterSelector)
+    const colorValues = useSelector(productsColorFilterSelector)
     return (
         <div className="details-filter">
-            {detailsValues.map((details, i) => (
                 <Details
-                    key={i}
-                    name={details.name}
-                    values={details.values}
-                    index={i}
+                    key={'materials'}
+                    name={'Материал'}
+                    values={materials}
+                    index={'material'}
                 />
-            ))}
+
+                <Details
+                    key={'colors'}
+                    name={'Цвет'}
+                    values={colors}
+                    index={'color'}
+                />
         </div>
+        
     )
 }

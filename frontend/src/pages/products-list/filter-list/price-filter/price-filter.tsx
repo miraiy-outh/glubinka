@@ -1,28 +1,38 @@
 import { useState } from "react";
 import "./price-filter.scss"
 import Slider from '@mui/material/Slider';
+import { useDispatch, useSelector } from "../../../../hooks/redux-hooks";
+import { productsPriceFilterSelector, productsPriceSelector } from "../../../../services/selectors/products-selectors";
+import { PRODUCTS_PRICE_FILTER_CHANGE } from "../../../../services/constants/products-constants";
 
 export function PriceFilter() {
-    const [value, setValue] = useState<number[]>([0, 100]);
+    const rangeValue = useSelector(productsPriceSelector)
+    const value = useSelector(productsPriceFilterSelector)
+    const dispatch = useDispatch()
     
     const handleChange = (event: Event, newValue: number | number[]) => {
         if (Array.isArray(newValue)) {
-            setValue(newValue);
+            dispatch({
+                type: PRODUCTS_PRICE_FILTER_CHANGE,
+                price: newValue
+            })
         }
     };
 
     const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue((prev) => {
-            const maxValue = prev[1]
-            return [parseInt(event.target.value), maxValue]
-        })
+            const maxValue = value[1]
+            dispatch({
+                type: PRODUCTS_PRICE_FILTER_CHANGE,
+                price: [parseInt(event.target.value), maxValue]
+            })
     };
 
     const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue((prev) => {
-            const minValue = prev[0]
-            return [minValue, parseInt(event.target.value)]
-        })
+            const minValue = value[0]
+            dispatch({
+                type: PRODUCTS_PRICE_FILTER_CHANGE,
+                price: [minValue, parseInt(event.target.value)]
+            })
     };
 
     return (
@@ -55,8 +65,8 @@ export function PriceFilter() {
                 <Slider
                 value={value}
                 onChange={handleChange}
-                min={0}
-                max={100}
+                min={rangeValue[0]}
+                max={rangeValue[1]}
                 step={1}
                 valueLabelDisplay="auto"
                 aria-labelledby="range-slider"
