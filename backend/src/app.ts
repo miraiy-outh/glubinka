@@ -1,18 +1,21 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import bodyParser from 'body-parser';
 import { createProduct } from './product-handlers/create-product';
 import { findProduct } from './product-handlers/find-product';
 import { getAllProducts } from './product-handlers/get-all-products';
 import { deleteProduct } from './product-handlers/delete-product';
-import { TResponseType } from './types/root-types';
-import { Product } from '@prisma/client';
+import cors from 'cors';
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-const port = 3000;
+app.use(cors({
+    origin: "*"
+}))
+
+const port = 3001;
 
 app.post('/api/products', createProduct);
 
