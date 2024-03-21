@@ -1,20 +1,20 @@
 import { useSelector } from "../../../../hooks/redux-hooks"
-import { productsColorFilterSelector, productsColorSelector, productsMaterialFilterSelector, productsMaterialSelector } from "../../../../services/selectors/products-selectors"
+import { productsColorFilterSelector, productsColorSelector, productsSizeFilterSelector, productsSizeSelector } from "../../../../services/selectors/products-selectors"
 import "./details-filter.scss"
 import { Details } from "./details/details"
 
 export function DetailsFilter() {
-    const materials = useSelector(productsMaterialSelector)
+    const sizes = useSelector(productsSizeSelector)
     const colors = useSelector(productsColorSelector)
-    const materialValues = useSelector(productsMaterialFilterSelector)
+    const sizeValues = useSelector(productsSizeFilterSelector)
     const colorValues = useSelector(productsColorFilterSelector)
     return (
         <div className="details-filter">
                 <Details
-                    key={'materials'}
-                    name={'Материал'}
-                    values={materials}
-                    index={'material'}
+                    key={'sizes'}
+                    name={'Размер'}
+                    values={sizes}
+                    index={'size'}
                 />
 
                 <Details

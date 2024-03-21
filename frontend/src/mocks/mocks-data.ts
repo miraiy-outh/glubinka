@@ -306,7 +306,7 @@ export const mockProductsInfo: TMockProductProps[] = [
                 isExist: true
             },
             {
-                title: "Черный",
+                title: "Чёрный",
                 hex: "#000000",
                 isExist: true
             }
@@ -438,7 +438,7 @@ export const mockProductsInfo: TMockProductProps[] = [
         ],
         colors: [
             {
-                title: "Темно-синий",
+                title: "Тёмно-синий",
                 hex: "#0000ff",
                 isExist: true
             },
@@ -511,7 +511,7 @@ export const mockProductsInfo: TMockProductProps[] = [
                 isExist: true
             },
             {
-                title: "Черный",
+                title: "Чёрный",
                 hex: "#000000",
                 isExist: true
             }
@@ -562,7 +562,7 @@ export const mockProductsInfo: TMockProductProps[] = [
         ],
         colors: [
             {
-                title: "Черный",
+                title: "Чёрный",
                 hex: "#000000",
                 isExist: true
             }

@@ -12,8 +12,8 @@ export function productsPriceFilterSelector(state: RootState) {
     return state.productsData.filter.priceFilter
 }
 
-export function productsMaterialFilterSelector(state: RootState) {
-    return state.productsData.filter.materialFilter
+export function productsSizeFilterSelector(state: RootState) {
+    return state.productsData.filter.sizeFilter
 }
 
 export function productsColorFilterSelector(state: RootState) {
@@ -24,8 +24,8 @@ export function productsPriceSelector(state: RootState) {
     return state.productsData.filterValues.prices
 }
 
-export function productsMaterialSelector(state: RootState) {
-    return state.productsData.filterValues.materials
+export function productsSizeSelector(state: RootState) {
+    return state.productsData.filterValues.sizes
 }
 
 export function productsColorSelector(state: RootState) {

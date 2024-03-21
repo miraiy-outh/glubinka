@@ -5,7 +5,6 @@ export function Details({ name, values, index }: { name: string, values: string[
     const dispatch = useDispatch()
 
     const handleChange = (value: string) => {
-        console.log(value)
     }
 
     return (

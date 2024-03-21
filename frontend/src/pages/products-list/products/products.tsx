@@ -1,11 +1,15 @@
 import { Product } from "../product/product";
 import { mockProductsInfo } from "../../../mocks/mocks-data";
 import "./products.scss"
+import { productsSelector } from "../../../services/selectors/products-selectors";
+import { useSelector } from "../../../hooks/redux-hooks";
 
 export function Products() {
+    const products = useSelector(productsSelector)
+
     return (
         <div className="products">
-            {mockProductsInfo.map((productInfo, key) => (
+            {products.map((productInfo, key) => (
                 <Product
                     key={key}
                     title={productInfo.name}

@@ -1,7 +1,8 @@
-import { PRODUCTS_COLOR_CHANGE, PRODUCTS_COLOR_FILTER_CHANGE, PRODUCTS_INIT, PRODUCTS_LOADING_CHANGE, PRODUCTS_MATERIAL_CHANGE, PRODUCTS_MATERIAL_FILTER_CHANGE, PRODUCTS_PAGE_CHANGE, PRODUCTS_PRICE_CHANGE, PRODUCTS_PRICE_FILTER_CHANGE } from "../constants/products-constants"
+import { PRODUCTS_CHANGE, PRODUCTS_COLOR_CHANGE, PRODUCTS_COLOR_FILTER_CHANGE, PRODUCTS_INIT, PRODUCTS_LOADING_CHANGE, PRODUCTS_PAGE_CHANGE, PRODUCTS_PRICE_CHANGE, PRODUCTS_PRICE_FILTER_CHANGE, PRODUCTS_SIZE_CHANGE, PRODUCTS_SIZE_FILTER_CHANGE } from "../constants/products-constants"
 
-type TSizeValue = {
-    size: 'S' | 'M' | 'L' | 'XL' | 'ONE',
+type TSizeValue = 'S' | 'M' | 'L' | 'XL' | 'ONE'
+type TSize = {
+    size: TSizeValue,
     isExist: boolean
 }
 type TColorValue = {
@@ -28,7 +29,7 @@ type TProduct = {
     id: number,
     name: string,
     price: number,
-    sizes: TSizeValue[],
+    sizes: TSize[],
     colors: TColorValue[],
     material: string,
     images: string[],
@@ -42,18 +43,19 @@ type TProduct = {
 
 type TFilterValues = {
     prices: number[],
-    materials: string[],
+    sizes: TSizeValue[],
     colors: string[]
 }
 
 type TFilter = {
     priceFilter: number[],
-    materialFilter: string[],
+    sizeFilter: string[],
     colorFilter: string[]
 }
 
 type TProductsState = {
     products: TProduct[],
+    filteredProducts: TProduct[],
     filterValues: TFilterValues,
     filter: TFilter,
     isLoading: boolean,
@@ -65,14 +67,18 @@ type TProductsInitAction = {
     products: TProduct[],
 }
 
+type TProductsChangeAction = {
+    type: typeof PRODUCTS_CHANGE,
+}
+
 type TProductsPriceFilterChangeAction = {
     type: typeof PRODUCTS_PRICE_FILTER_CHANGE,
     price: number[]
 }
 
-type TProductsMaterialFilterChangeAction = {
-    type: typeof PRODUCTS_MATERIAL_FILTER_CHANGE,
-    materials: string[]
+type TProductsSizeFilterChangeAction = {
+    type: typeof PRODUCTS_SIZE_FILTER_CHANGE,
+    sizes: TSizeValue[]
 }
 
 type TProductsColorFilterChangeAction = {
@@ -85,9 +91,9 @@ type TProductsPriceChangeAction = {
     prices: number[]
 }
 
-type TProductsMaterialChangeAction = {
-    type: typeof PRODUCTS_MATERIAL_CHANGE,
-    materials: string[]
+type TProductsSizeChangeAction = {
+    type: typeof PRODUCTS_SIZE_CHANGE,
+    sizes: TSizeValue[]
 }
 
 type TProductsColorChangeAction = {
@@ -105,18 +111,19 @@ type TProductsLoadingChangeAction = {
     isLoading: boolean
 }
 
-type TProductsActions = TProductsInitAction | TProductsPriceFilterChangeAction | TProductsMaterialFilterChangeAction | TProductsColorFilterChangeAction | TProductsPriceChangeAction | TProductsMaterialChangeAction | TProductsColorChangeAction | TProductsPageChangeAction | TProductsLoadingChangeAction
+type TProductsActions = TProductsInitAction | TProductsChangeAction | TProductsPriceFilterChangeAction | TProductsSizeFilterChangeAction | TProductsColorFilterChangeAction | TProductsPriceChangeAction | TProductsSizeChangeAction | TProductsColorChangeAction | TProductsPageChangeAction | TProductsLoadingChangeAction
 
 const defaultState : TProductsState = {
     products: [],
+    filteredProducts: [],
     filterValues: {
         prices: [0, 100],
-        materials: ['Хлопок', 'Шёлк', 'Шерсть'],
-        colors: ['Белый', 'Чёрный', 'Синий']
+        sizes: ['S' , 'M' , 'L' , 'XL' , 'ONE'],
+        colors: []
     },
     filter: {
         priceFilter: [0, 100],
-        materialFilter: [],
+        sizeFilter: [],
         colorFilter: []
     },
     isLoading: true,
@@ -126,10 +133,31 @@ const defaultState : TProductsState = {
 export function productsReducer(state = defaultState, action: TProductsActions): TProductsState {
     switch (action.type) {
         case PRODUCTS_INIT: {
+            const products = action.products
+            const colors = products.map(product => product.colors.map(color => color.title)).reduce((acc, curr) => acc.concat(curr), [])
+            const uniqueColors = colors.filter((color, index) => colors.indexOf(color) === index).sort((a, b) => a.localeCompare(b))
+            const prices = products.map(product => product.price)
+            const minPrice = Math.min(...prices);
+            const maxPrice = Math.max(...prices);
             return {
                 ...state,
-                products: action.products,
-                isLoading: false
+                products,
+                isLoading: false,
+                filterValues: {
+                    ...state.filterValues,
+                    colors: uniqueColors,
+                    prices: [minPrice, maxPrice]
+                },
+                filter: {
+                    ...state.filter,
+                    priceFilter: [minPrice, maxPrice]
+                }
+            }
+        }
+
+        case PRODUCTS_CHANGE: {
+            return {
+                ...state
             }
         }
 
@@ -143,12 +171,12 @@ export function productsReducer(state = defaultState, action: TProductsActions):
             }
         }
 
-        case PRODUCTS_MATERIAL_CHANGE: {
+        case PRODUCTS_SIZE_CHANGE: {
             return {
                 ...state, 
                 filterValues: {
                     ...state.filterValues,
-                    materials: action.materials
+                    sizes: action.sizes
                 }
             }
         }
@@ -173,12 +201,12 @@ export function productsReducer(state = defaultState, action: TProductsActions):
             }
         }
 
-        case PRODUCTS_MATERIAL_FILTER_CHANGE: {
+        case PRODUCTS_SIZE_FILTER_CHANGE: {
             return {
                 ...state,
                 filter: {
                     ...state.filter,
-                    materialFilter: action.materials
+                    sizeFilter: action.sizes
                 }
             }
         }
