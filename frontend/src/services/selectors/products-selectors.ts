@@ -1,7 +1,7 @@
 import { RootState } from "../store";
 
 export function productsSelector(state: RootState) {
-    return state.productsData.products
+    return state.productsData.filteredProducts
 }
 
 export function productsFilterSelector(state: RootState) {

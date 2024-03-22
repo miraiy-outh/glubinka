@@ -78,7 +78,7 @@ type TProductsPriceFilterChangeAction = {
 
 type TProductsSizeFilterChangeAction = {
     type: typeof PRODUCTS_SIZE_FILTER_CHANGE,
-    sizes: TSizeValue[]
+    sizes: string[]
 }
 
 type TProductsColorFilterChangeAction = {
@@ -142,6 +142,7 @@ export function productsReducer(state = defaultState, action: TProductsActions):
             return {
                 ...state,
                 products,
+                filteredProducts: products,
                 isLoading: false,
                 filterValues: {
                     ...state.filterValues,
@@ -156,8 +157,18 @@ export function productsReducer(state = defaultState, action: TProductsActions):
         }
 
         case PRODUCTS_CHANGE: {
+            let filteredProducts = state.products.filter((product) => product.price >= state.filter.priceFilter[0] && product.price <= state.filter.priceFilter[1])
+
+            if (state.filter.colorFilter.length !== 0) {
+                filteredProducts = filteredProducts.filter((product) => product.colors.some(color => state.filter.colorFilter.includes(color.title)))
+            }
+
+            if (state.filter.sizeFilter.length !== 0) {
+                filteredProducts = filteredProducts.filter((product) => product.sizes.some(size => state.filter.sizeFilter.includes(size.size) && size.isExist))
+            }
             return {
-                ...state
+                ...state,
+                filteredProducts
             }
         }
 

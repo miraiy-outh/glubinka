@@ -1,9 +1,8 @@
-import { useState } from "react";
 import "./price-filter.scss"
 import Slider from '@mui/material/Slider';
 import { useDispatch, useSelector } from "../../../../hooks/redux-hooks";
 import { productsPriceFilterSelector, productsPriceSelector } from "../../../../services/selectors/products-selectors";
-import { PRODUCTS_PRICE_FILTER_CHANGE } from "../../../../services/constants/products-constants";
+import { PRODUCTS_CHANGE, PRODUCTS_PRICE_FILTER_CHANGE } from "../../../../services/constants/products-constants";
 
 export function PriceFilter() {
     const rangeValue = useSelector(productsPriceSelector)
@@ -15,6 +14,10 @@ export function PriceFilter() {
             dispatch({
                 type: PRODUCTS_PRICE_FILTER_CHANGE,
                 price: newValue
+            })
+
+            dispatch({
+                type: PRODUCTS_CHANGE
             })
         }
     };

@@ -1,13 +1,11 @@
 import { useSelector } from "../../../../hooks/redux-hooks"
-import { productsColorFilterSelector, productsColorSelector, productsSizeFilterSelector, productsSizeSelector } from "../../../../services/selectors/products-selectors"
+import { productsColorSelector, productsSizeSelector } from "../../../../services/selectors/products-selectors"
 import "./details-filter.scss"
 import { Details } from "./details/details"
 
 export function DetailsFilter() {
     const sizes = useSelector(productsSizeSelector)
     const colors = useSelector(productsColorSelector)
-    const sizeValues = useSelector(productsSizeFilterSelector)
-    const colorValues = useSelector(productsColorFilterSelector)
     return (
         <div className="details-filter">
                 <Details

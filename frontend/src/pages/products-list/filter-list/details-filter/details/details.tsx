@@ -1,10 +1,57 @@
-import { useDispatch} from "../../../../../hooks/redux-hooks";
+import { useDispatch, useSelector} from "../../../../../hooks/redux-hooks";
+import { PRODUCTS_CHANGE, PRODUCTS_COLOR_FILTER_CHANGE, PRODUCTS_SIZE_FILTER_CHANGE } from "../../../../../services/constants/products-constants";
+import { productsColorFilterSelector, productsSizeFilterSelector } from "../../../../../services/selectors/products-selectors";
 import "./details.scss"
 
 export function Details({ name, values, index }: { name: string, values: string[], index: string }) {
     const dispatch = useDispatch()
+    const colors = useSelector(productsColorFilterSelector)
+    const sizes = useSelector(productsSizeFilterSelector)
 
     const handleChange = (value: string) => {
+        switch(index) {
+            case 'color': {
+                if (colors.indexOf(value) === -1) {
+                    colors.push(value)
+                    dispatch({
+                        type: PRODUCTS_COLOR_FILTER_CHANGE,
+                        colors: colors
+                    })
+                }
+                else {
+                    colors.splice(colors.indexOf(value), 1)
+                    dispatch({
+                        type: PRODUCTS_COLOR_FILTER_CHANGE,
+                        colors: colors
+                    })
+                }
+                break
+            }
+
+            case 'size': {
+                if (sizes.indexOf(value) === -1) {
+                    sizes.push(value)
+                    dispatch({
+                        type: PRODUCTS_SIZE_FILTER_CHANGE,
+                        sizes: sizes
+                    })
+                }
+                else {
+                    sizes.splice(sizes.indexOf(value), 1)
+                    dispatch({
+                        type: PRODUCTS_SIZE_FILTER_CHANGE,
+                        sizes: sizes
+                    })
+                }
+                break
+            }
+
+            default: break
+        }
+
+        dispatch({
+            type: PRODUCTS_CHANGE
+        })
     }
 
     return (

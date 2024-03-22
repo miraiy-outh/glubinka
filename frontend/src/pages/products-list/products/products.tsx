@@ -1,5 +1,4 @@
 import { Product } from "../product/product";
-import { mockProductsInfo } from "../../../mocks/mocks-data";
 import "./products.scss"
 import { productsSelector } from "../../../services/selectors/products-selectors";
 import { useSelector } from "../../../hooks/redux-hooks";
