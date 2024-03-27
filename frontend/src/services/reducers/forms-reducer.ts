@@ -2,7 +2,7 @@ import {
   FORMS_COLORS_CHANGE,
   FORMS_SIZES_CHANGE,
   FORMS_INIT,
-  EXAMPLE_ACTION,
+  FORMS_RESET,
 } from "../constants/forms-constants";
 
 type TFormsState = {
@@ -26,10 +26,15 @@ type TFormsSizesChangeAction = {
   formId: number;
 };
 
+type TFormsResetAction = {
+  type: typeof FORMS_RESET;
+};
+
 export type TFormsActions =
   | TFormsInitAction
   | TFormsColorsChangeAction
-  | TFormsSizesChangeAction;
+  | TFormsSizesChangeAction
+  | TFormsResetAction;
 
 const defaultState: TFormsState = {
   sizes: [],
@@ -66,6 +71,16 @@ export function formsReducer(
       return {
         ...state,
         sizes: newSizes,
+      };
+    }
+
+    case FORMS_RESET: {
+      const newColors = new Array(state.colors.length).fill(false);
+      const newSizes = new Array(state.sizes.length).fill(false);
+      return {
+        ...state,
+        sizes: newColors,
+        colors: newSizes,
       };
     }
 

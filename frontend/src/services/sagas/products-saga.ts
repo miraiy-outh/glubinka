@@ -1,5 +1,5 @@
 import { takeEvery } from "redux-saga/effects";
-import { EXAMPLE_ACTION, FORMS_INIT } from "../constants/forms-constants";
+import { FORMS_INIT } from "../constants/forms-constants";
 import { TProduct } from "../reducers/products-reducer";
 import { callTs, put, selectTs } from "./sagas-functions";
 import { FETCH_PRODUCTS, PRODUCTS_INIT } from "../constants/products-constants";
