@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "../../../hooks/redux-hooks"
-import { PRODUCTS_COLOR_FILTER_CHANGE, PRODUCTS_PRICE_FILTER_CHANGE, PRODUCTS_SIZE_FILTER_CHANGE } from "../../../services/constants/products-constants"
+import { EXAMPLE_ACTION } from "../../../services/constants/forms-constants"
+import { PRODUCTS_PRICE_FILTER_CHANGE } from "../../../services/constants/products-constants"
 import { productsPriceSelector } from "../../../services/selectors/products-selectors"
 import { DetailsFilter } from "./details-filter/details-filter"
 import "./filter-list.scss"
@@ -15,13 +16,7 @@ export function FilterList() {
         })
 
         dispatch({
-            type: PRODUCTS_COLOR_FILTER_CHANGE,
-            colors: []
-        })
-
-        dispatch({
-            type: PRODUCTS_SIZE_FILTER_CHANGE,
-            sizes: []
+            type: EXAMPLE_ACTION
         })
     }
 
