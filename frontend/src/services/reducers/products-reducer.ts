@@ -1,3 +1,4 @@
+import { paginationProducts, pagesCount } from "../../utils/pagination";
 import {
   FETCH_PRODUCTS,
   PRODUCTS_CHANGE,
@@ -71,6 +72,7 @@ type TProductsState = {
   filter: TFilter;
   isLoading: boolean;
   pageNumber: number;
+  pageCount: number;
 };
 
 type TProductsInitAction = {
@@ -154,6 +156,7 @@ const defaultState: TProductsState = {
   },
   isLoading: true,
   pageNumber: 1,
+  pageCount: 1,
 };
 
 export function productsReducer(
@@ -163,6 +166,7 @@ export function productsReducer(
   switch (action.type) {
     case PRODUCTS_INIT: {
       const products = action.products;
+      const pageCount = pagesCount(action.products.length);
       const colors = products
         .map((product) => product.colors.map((color) => color.title))
         .reduce((acc, curr) => acc.concat(curr), []);
@@ -178,10 +182,16 @@ export function productsReducer(
       const prices = products.map((product) => product.price);
       const minPrice = Math.min(...prices);
       const maxPrice = Math.max(...prices);
+
+      let filteredProducts = paginationProducts(
+        state.pageNumber,
+        action.products
+      );
       return {
         ...state,
         products,
-        filteredProducts: products,
+        pageCount,
+        filteredProducts,
         isLoading: false,
         filterValues: {
           ...state.filterValues,
@@ -219,9 +229,17 @@ export function productsReducer(
           )
         );
       }
+
+      const pageCount = pagesCount(filteredProducts.length);
+
+      let newFilteredProducts = paginationProducts(
+        state.pageNumber,
+        filteredProducts
+      );
       return {
         ...state,
-        filteredProducts,
+        pageCount,
+        filteredProducts: newFilteredProducts,
       };
     }
 
@@ -258,6 +276,7 @@ export function productsReducer(
     case PRODUCTS_PRICE_FILTER_CHANGE: {
       return {
         ...state,
+        pageNumber: 1,
         filter: {
           ...state.filter,
           priceFilter: action.price,
@@ -268,6 +287,7 @@ export function productsReducer(
     case PRODUCTS_SIZE_FILTER_CHANGE: {
       return {
         ...state,
+        pageNumber: 1,
         filter: {
           ...state.filter,
           sizeFilter: action.sizes,
@@ -278,6 +298,7 @@ export function productsReducer(
     case PRODUCTS_COLOR_FILTER_CHANGE: {
       return {
         ...state,
+        pageNumber: 1,
         filter: {
           ...state.filter,
           colorFilter: action.colors,

@@ -8,18 +8,27 @@ import Pagination from "@mui/material/Pagination";
 import { useDispatch, useSelector } from "../../hooks/redux-hooks";
 import {
   FETCH_PRODUCTS,
+  PRODUCTS_CHANGE,
   PRODUCTS_PAGE_CHANGE,
 } from "../../services/constants/products-constants";
-import { productsPageNumberSelector } from "../../services/selectors/products-selectors";
+import {
+  pageCountSelector,
+  productsPageNumberSelector,
+} from "../../services/selectors/products-selectors";
 
 export function ProductsList() {
   const dispatch = useDispatch();
   const pageNumber = useSelector(productsPageNumberSelector);
+  const pagesCount = useSelector(pageCountSelector);
 
   const handlePageChange = (event: ChangeEvent<unknown>, newPage: number) => {
     dispatch({
       type: PRODUCTS_PAGE_CHANGE,
       page: newPage,
+    });
+
+    dispatch({
+      type: PRODUCTS_CHANGE,
     });
   };
 
@@ -35,7 +44,7 @@ export function ProductsList() {
         <div className="products-list__container__subcontainer">
           <Products />
           <Pagination
-            count={10}
+            count={pagesCount}
             page={pageNumber}
             size="large"
             color="primary"
