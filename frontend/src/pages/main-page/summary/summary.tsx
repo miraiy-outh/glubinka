@@ -1,20 +1,21 @@
-import { LogoMainPage } from "../../../components/logo/logo-main-page";
-import "./summary.scss"
-import { mockSummaryInfo } from "../../../mocks/mocks-data";
+import "./summary.scss";
 import { SummaryItem } from "../../../components/summary-item/summary-item";
+import { useSelector } from "../../../hooks/redux-hooks";
+import { summariesSelector } from "../../../services/selectors/summary-selectors";
 
 export function Summary() {
-    return (
-        <div className="summary">
-            {mockSummaryInfo.map((summary, key) => (
-                <SummaryItem
-                    key={key}
-                    type={summary.type}
-                    className={summary.className}
-                    imgURL={summary.imgURL}
-                    header={summary.header}
-                />
-            ))}
-        </div>
-    )
+  const summaries = useSelector(summariesSelector);
+  return (
+    <div className="summary">
+      {summaries.map((summary, key) => (
+        <SummaryItem
+          key={key}
+          type={summary.type}
+          className={summary.className}
+          imgURL={summary.imgURL}
+          header={summary.header}
+        />
+      ))}
+    </div>
+  );
 }

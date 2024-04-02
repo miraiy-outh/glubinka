@@ -1,6 +1,6 @@
 import { TProduct } from "../services/reducers/products-reducer";
 
-const itemsPerPage = 3;
+const itemsPerPage = 9;
 
 export function paginationProducts(page: number, products: TProduct[]) {
   if (products.length <= itemsPerPage) return products;

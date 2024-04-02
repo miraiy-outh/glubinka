@@ -1,5 +1,7 @@
 import { paginationProducts, pagesCount } from "../../utils/pagination";
 import {
+  ADD_TO_CART,
+  ADD_TO_FAVORITE,
   FETCH_PRODUCTS,
   PRODUCTS_CHANGE,
   PRODUCTS_COLOR_CHANGE,
@@ -13,12 +15,13 @@ import {
   PRODUCTS_SIZE_FILTER_CHANGE,
 } from "../constants/products-constants";
 
-type TSizeValue = "S" | "M" | "L" | "XL" | "ONE";
+export type TSizeValue = "S" | "M" | "L" | "XL" | "ONE";
+
 type TSize = {
   size: TSizeValue;
   isExist: boolean;
 };
-type TColorValue = {
+export type TColorValue = {
   title: string;
   hex: string;
   isExist: boolean;
@@ -39,7 +42,7 @@ type TCollection = {
 };
 
 export type TProduct = {
-  id: number;
+  productId: number;
   name: string;
   price: number;
   sizes: TSize[];
@@ -124,6 +127,16 @@ type TProductsLoadingChangeAction = {
   isLoading: boolean;
 };
 
+type TAddToFavoriteAction = {
+  type: typeof ADD_TO_FAVORITE;
+  productId: number;
+};
+
+type TAddToCartAction = {
+  type: typeof ADD_TO_CART;
+  productId: number;
+};
+
 type TFetchProductsAction = {
   type: typeof FETCH_PRODUCTS;
 };
@@ -139,6 +152,9 @@ export type TProductsActions =
   | TProductsColorChangeAction
   | TProductsPageChangeAction
   | TProductsLoadingChangeAction
+  | TFetchProductsAction
+  | TAddToFavoriteAction
+  | TAddToCartAction
   | TFetchProductsAction;
 
 const defaultState: TProductsState = {
@@ -187,6 +203,7 @@ export function productsReducer(
         state.pageNumber,
         action.products
       );
+
       return {
         ...state,
         products,
@@ -317,6 +334,40 @@ export function productsReducer(
       return {
         ...state,
         isLoading: action.isLoading,
+      };
+    }
+
+    case ADD_TO_FAVORITE: {
+      const newProducts = state.products.map((product) => {
+        if (product.productId === action.productId) {
+          return {
+            ...product,
+            isInFavorite: !product.isInFavorite,
+          };
+        }
+        return product;
+      });
+
+      return {
+        ...state,
+        products: newProducts,
+      };
+    }
+
+    case ADD_TO_CART: {
+      const newProducts = state.products.map((product) => {
+        if (product.productId === action.productId) {
+          return {
+            ...product,
+            isInCart: !product.isInCart,
+          };
+        }
+        return product;
+      });
+
+      return {
+        ...state,
+        products: newProducts,
       };
     }
 

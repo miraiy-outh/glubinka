@@ -1,21 +1,17 @@
-import { Cart } from "../../../../components/icons-svg/cart";
-import { Favorites } from "../../../../components/icons-svg/favorites";
-import "./options.scss"
+import "./options.scss";
+import { ProductCart } from "./productCart";
+import { ProductFavorite } from "./productFavorite";
 
-export function Options({ isInFavorite, isInCart }: { isInFavorite: boolean, isInCart: boolean }) {
-    let iconSize = 32;
-    return (
-        <div className="options">
-            <Favorites
-                fill={isInFavorite ? "#FF0024" : "#5A607F"}
-                width={iconSize}
-                height={iconSize}
-            />
-            <Cart
-                fill={isInCart ? "#FF0024" : "#5A607F"}
-                width={iconSize}
-                height={iconSize}
-            />
-        </div>
-    )
+export function Options({ productId }: { productId: number }) {
+  let iconSize = 32;
+  return (
+    <div className="options">
+      <ProductFavorite
+        productId={productId}
+        width={iconSize}
+        height={iconSize}
+      />
+      <ProductCart productId={productId} width={iconSize} height={iconSize} />
+    </div>
+  );
 }

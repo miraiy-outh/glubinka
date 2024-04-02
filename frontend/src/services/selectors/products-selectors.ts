@@ -43,3 +43,21 @@ export function productsPageNumberSelector(state: RootState) {
 export function pageCountSelector(state: RootState) {
   return state.productsData.pageCount;
 }
+
+export function isInFavoriteSelector(id: number) {
+  return (state: RootState) => {
+    const product = state.productsData.products.find(
+      (product) => product.productId === id
+    );
+    return product ? product.isInFavorite : false;
+  };
+}
+
+export function isInCartSelector(id: number) {
+  return (state: RootState) => {
+    const product = state.productsData.products.find(
+      (product) => product.productId === id
+    );
+    return product ? product.isInCart : false;
+  };
+}
