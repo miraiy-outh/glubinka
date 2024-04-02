@@ -15,9 +15,9 @@ import {
   PRODUCTS_SIZE_FILTER_CHANGE,
 } from "../constants/products-constants";
 
-export type TSizeValue = "S" | "M" | "L" | "XL" | "ONE";
+type TSizeValue = "S" | "M" | "L" | "XL" | "ONE";
 
-type TSize = {
+export type TSize = {
   size: TSizeValue;
   isExist: boolean;
 };

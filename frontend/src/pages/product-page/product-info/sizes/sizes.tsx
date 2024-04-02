@@ -1,7 +1,7 @@
-import { TSizeValue } from "../../../../services/reducers/products-reducer";
+import { TSize } from "../../../../services/reducers/products-reducer";
 import "./sizes.scss";
 
-export function Sizes({ sizes }: { sizes: TSizeValue[] }) {
+export function Sizes({ sizes }: { sizes: TSize[] }) {
   return (
     <div className="sizes">
       <div className="sizes__title">Доступные размеры</div>
