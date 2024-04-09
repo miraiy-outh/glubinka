@@ -28,7 +28,7 @@ export type TColorValue = {
   hex: string;
   isExist: boolean;
 };
-type TDetailInfo = {
+export type TDetailInfo = {
   title: string;
   value: string;
 };
