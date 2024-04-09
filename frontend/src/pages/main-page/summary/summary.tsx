@@ -1,5 +1,5 @@
 import "./summary.scss";
-import { SummaryItem } from "../../../components/summary-item/summary-item";
+import { SummaryItem } from "./summary-item/summary-item";
 import { useSelector } from "../../../hooks/redux-hooks";
 import { summariesSelector } from "../../../services/selectors/summary-selectors";
 

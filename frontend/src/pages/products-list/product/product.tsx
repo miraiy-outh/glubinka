@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Carusel } from "./carusel/carusel";
 import { Info } from "./info/info";
 import { Options } from "./options/options";
@@ -14,8 +15,14 @@ export function Product({
   price: number;
   imagesSrc: string[];
 }) {
+  const navigate = useNavigate();
+  const handleRouteChange = () => {
+    console.log(productId);
+    navigate(`${productId}`);
+  };
+
   return (
-    <div className="product">
+    <div className="product" onClick={handleRouteChange}>
       <Carusel imagesSrc={imagesSrc} />
       <div className="product__container">
         <Info title={title} price={price} />

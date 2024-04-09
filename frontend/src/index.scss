@@ -1,95 +1,111 @@
 @font-face {
-    font-family: "Inter";
-    src: url("public/fonts/Inter-Regular.ttf") format("ttf");
-    font-weight: 400;
-    font-style: normal;
-    font-display: normal;
+  font-family: "Inter";
+  src: url("public/fonts/Inter-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: normal;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("public/fonts/Inter-Medium.ttf") format("ttf");
-    font-weight: 500;
-    font-style: normal;
-    font-display: normal;
+  font-family: "Inter";
+  src: url("public/fonts/Inter-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: normal;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("public/fonts/Inter-SemiBold.ttf") format("ttf");
-    font-weight: 600;
-    font-style: normal;
-    font-display: normal;
+  font-family: "Inter";
+  src: url("public/fonts/Inter-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: normal;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("public/fonts/Inter-Bold.ttf") format("ttf");
-    font-weight: 700;
-    font-style: normal;
-    font-display: normal;
+  font-family: "Inter";
+  src: url("public/fonts/Inter-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: normal;
 }
 
 :root {
-    --primary-color: #FF0024;
-    --bg-color: #FFFFFF;
-    --bg-subcolor: rgba(90, 96, 127, 0.10);
-    --main-color: #121212;
-    --secondary-color: #5A607F;
-    --lightgray-color: #D9E4FF;
-    --main-page-logo-color: #DFDFDF;
-    --transparent: rgba(0, 0, 0, 0);
+  --primary-color: #ff0024;
+  --bg-color: #ffffff;
+  --bg-subcolor: rgba(90, 96, 127, 0.1);
+  --main-color: #121212;
+  --secondary-color: #5a607f;
+  --lightgray-color: #d9e4ff;
+  --main-page-logo-color: #dfdfdf;
+  --transparent: rgba(0, 0, 0, 0);
 
-    --subtitle3-size: 48px;
-    --subtitle2-size: 24px;
-    --paragraph-size: 16px;
-    --main-page-size: 28px;
-    --subtext-size: 14px;
+  --subtitle3-size: 48px;
+  --subtitle2-size: 24px;
+  --paragraph-size: 16px;
+  --main-page-size: 28px;
+  --subtext-size: 14px;
 
-    --regular-weight: 400;
-    --medium-weight: 500;
-    --semibold-weight: 600;
-    --bold-weight: 700;
+  --regular-weight: 400;
+  --medium-weight: 500;
+  --semibold-weight: 600;
+  --bold-weight: 700;
 
-    --subborder: 1px solid rgba(90, 96, 127, 0.20);
+  --subborder: 1px solid rgba(90, 96, 127, 0.2);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+.nav__button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  height: 32px;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 @mixin flex-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin flex-row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 @mixin flex-center {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin details-title {
-    color: var(--main-color);
-    font-size: var(--paragraph-size);
-    font-weight: var(--bold-weight);
+  color: var(--main-color);
+  font-size: var(--paragraph-size);
+  font-weight: var(--bold-weight);
 }
 
 @mixin product-details-title {
-    color: var(--main-color);
-    font-size: var(--subtitle2-size);
-    font-weight: var(--medium-weight);
+  color: var(--main-color);
+  font-size: var(--subtitle2-size);
+  font-weight: var(--medium-weight);
 }
 
 @mixin product-details-text {
-    color: var(--secondary-color);
-    font-size: var(--paragraph-size);
-    font-weight: var(--medium-weight);
+  color: var(--secondary-color);
+  font-size: var(--paragraph-size);
+  font-weight: var(--medium-weight);
 }

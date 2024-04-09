@@ -922,50 +922,6 @@
     }
   ],
 
-  "collections": [
-    {
-      "id": 1,
-      "imgURL": "public/images/col1.jpg",
-      "header": "База",
-      "title": "Базовая коллекция с приятными цветами"
-    },
-
-    {
-      "id": 2,
-      "imgURL": "public/images/col2.jpg",
-      "header": "Улица",
-      "title": "Скорость и свобода"
-    },
-
-    {
-      "id": 3,
-      "imgURL": "public/images/col3.jpg",
-      "header": "Молодость",
-      "title": "Наивность с нотками ностальгии"
-    },
-
-    {
-      "id": 4,
-      "imgURL": "public/images/col4.jpg",
-      "header": "Спорт",
-      "title": "Удобная одежда, не сковывающая движения"
-    },
-
-    {
-      "id": 5,
-      "imgURL": "public/images/col5.jpg",
-      "header": "Огонь",
-      "title": "Ярко, дерзко, броско"
-    },
-
-    {
-      "id": 6,
-      "imgURL": "public/images/col6.jpg",
-      "header": "Техно",
-      "title": "Странные формы и цвета"
-    }
-  ],
-
   "summary": [
     {
       "id": 1,

@@ -1,4 +1,4 @@
-import { Collection } from "../../../components/collection/collection";
+import { Collection } from "./collection/collection";
 import "./collections.scss";
 import { collectionsSelector } from "../../../services/selectors/collections-selector";
 import { useSelector } from "../../../hooks/redux-hooks";
@@ -12,6 +12,7 @@ export function Collections() {
         {collections.map((collection, key) => (
           <Collection
             key={key}
+            id={key + 1}
             imgURL={collection.imgURL}
             header={collection.header}
             title={collection.title}

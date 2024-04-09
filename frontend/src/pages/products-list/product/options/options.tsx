@@ -1,6 +1,6 @@
 import "./options.scss";
-import { ProductCart } from "./productCart";
-import { ProductFavorite } from "./productFavorite";
+import { ProductCart } from "../../../../components/product-cart";
+import { ProductFavorite } from "../../../../components/product-favorite";
 
 export function Options({ productId }: { productId: number }) {
   let iconSize = 32;

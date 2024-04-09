@@ -18,7 +18,6 @@ async function getSummaries(): Promise<TSummary[]> {
 async function getCollections(): Promise<TCollection[]> {
   const response = await fetch("http://localhost:3000/collection");
   const data = await response.json();
-
   return data as Promise<TCollection[]>;
 }
 

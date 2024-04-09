@@ -1,11 +1,12 @@
 @import "../../../index.scss";
 
 .photos {
-    @include flex-column;
-    gap: 20px;
+  @include flex-column;
+  gap: 20px;
 }
 
 .photo {
-    width: 832px;
-    height: 832px;
+  width: 832px;
+  height: 832px;
+  object-fit: cover;
 }

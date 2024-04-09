@@ -1,27 +1,34 @@
 @import "../../index.scss";
 
 .products-list {
-    @include flex-column;
-    align-items: center;
-    min-width: 1570px;
+  @include flex-column;
+  align-items: center;
+  min-width: 1570px;
+
+  &__main-container {
+    min-width: 1440px;
+  }
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    margin: 64px 0 0 8px;
+    text-transform: uppercase;
+  }
+
+  &__container {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 0 100px;
+    max-width: 1440px;
+    width: 100%;
     padding-bottom: 180px;
 
-    &__container {
-        @include flex-row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 100px 0;
-        margin: 0 64px;
-        max-width: 1440px;
-        width: 100%;
-        padding-bottom: 180px;
-
-        &__subcontainer {
-            @include flex-column;
-            align-items: center;
-            gap: 40px;
-        }
+    &__subcontainer {
+      @include flex-column;
+      align-items: center;
+      gap: 40px;
     }
-
+  }
 }

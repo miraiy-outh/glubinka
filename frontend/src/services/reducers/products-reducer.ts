@@ -4,6 +4,8 @@ import {
   ADD_TO_FAVORITE,
   FETCH_PRODUCTS,
   PRODUCTS_CHANGE,
+  PRODUCTS_COLLECTION_CHANGE,
+  PRODUCTS_COLLECTION_FILTER_CHANGE,
   PRODUCTS_COLOR_CHANGE,
   PRODUCTS_COLOR_FILTER_CHANGE,
   PRODUCTS_INIT,
@@ -66,6 +68,7 @@ type TFilter = {
   priceFilter: number[];
   sizeFilter: string[];
   colorFilter: string[];
+  collectionFilter: number | null;
 };
 
 type TProductsState = {
@@ -73,6 +76,7 @@ type TProductsState = {
   filteredProducts: TProduct[];
   filterValues: TFilterValues;
   filter: TFilter;
+  currentCollection: string | null;
   isLoading: boolean;
   pageNumber: number;
   pageCount: number;
@@ -102,6 +106,11 @@ type TProductsColorFilterChangeAction = {
   colors: string[];
 };
 
+type TProductsCollectionFilterChangeAction = {
+  type: typeof PRODUCTS_COLLECTION_FILTER_CHANGE;
+  collection: number | null;
+};
+
 type TProductsPriceChangeAction = {
   type: typeof PRODUCTS_PRICE_CHANGE;
   prices: number[];
@@ -115,6 +124,11 @@ type TProductsSizeChangeAction = {
 type TProductsColorChangeAction = {
   type: typeof PRODUCTS_COLOR_CHANGE;
   colors: string[];
+};
+
+type TProductsCollectionChange = {
+  type: typeof PRODUCTS_COLLECTION_CHANGE;
+  collection: string | null;
 };
 
 type TProductsPageChangeAction = {
@@ -147,9 +161,11 @@ export type TProductsActions =
   | TProductsPriceFilterChangeAction
   | TProductsSizeFilterChangeAction
   | TProductsColorFilterChangeAction
+  | TProductsCollectionFilterChangeAction
   | TProductsPriceChangeAction
   | TProductsSizeChangeAction
   | TProductsColorChangeAction
+  | TProductsCollectionChange
   | TProductsPageChangeAction
   | TProductsLoadingChangeAction
   | TFetchProductsAction
@@ -169,7 +185,9 @@ const defaultState: TProductsState = {
     priceFilter: [0, 100],
     sizeFilter: [],
     colorFilter: [],
+    collectionFilter: null,
   },
+  currentCollection: null,
   isLoading: true,
   pageNumber: 1,
   pageCount: 1,
@@ -235,6 +253,12 @@ export function productsReducer(
           product.colors.some((color) =>
             state.filter.colorFilter.includes(color.title)
           )
+        );
+      }
+
+      if (state.filter.collectionFilter !== null) {
+        filteredProducts = filteredProducts.filter(
+          (product) => product.collection.id === state.filter.collectionFilter
         );
       }
 
@@ -320,6 +344,24 @@ export function productsReducer(
           ...state.filter,
           colorFilter: action.colors,
         },
+      };
+    }
+
+    case PRODUCTS_COLLECTION_FILTER_CHANGE: {
+      return {
+        ...state,
+        pageNumber: 1,
+        filter: {
+          ...state.filter,
+          collectionFilter: action.collection,
+        },
+      };
+    }
+
+    case PRODUCTS_COLLECTION_CHANGE: {
+      return {
+        ...state,
+        currentCollection: action.collection,
       };
     }
 

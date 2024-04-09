@@ -44,6 +44,18 @@ export function pageCountSelector(state: RootState) {
   return state.productsData.pageCount;
 }
 
+export function productsCurrentCollectionSelector(state: RootState) {
+  return state.productsData.currentCollection;
+}
+
+export function productSelector(id: number) {
+  return (state: RootState) => {
+    return state.productsData.products.find(
+      (product) => product.productId === id
+    );
+  };
+}
+
 export function isInFavoriteSelector(id: number) {
   return (state: RootState) => {
     const product = state.productsData.products.find(
