@@ -1,7 +1,7 @@
 import "./products-list.scss";
 import { Footer } from "../../components/footer/footer";
 import { Header } from "../../components/header/header";
-import { Products } from "./products/products";
+import { Products } from "../../components/products/products";
 import { FilterList } from "./filter-list/filter-list";
 import { ChangeEvent } from "react";
 import Pagination from "@mui/material/Pagination";

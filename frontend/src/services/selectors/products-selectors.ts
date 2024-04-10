@@ -73,3 +73,15 @@ export function isInCartSelector(id: number) {
     return product ? product.isInCart : false;
   };
 }
+
+export function favoritesProductsSelector(state: RootState) {
+  return state.productsData.products.filter((product) => product.isInFavorite);
+}
+
+export function cartProductsSelector(state: RootState) {
+  return state.productsData.products.filter((product) => product.isInCart);
+}
+
+export function allProductsSelector(state: RootState) {
+  return state.productsData.products;
+}

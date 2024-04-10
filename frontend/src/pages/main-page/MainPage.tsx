@@ -1,12 +1,12 @@
-import "./main-page.scss";
 import { Footer } from "../../components/footer/footer";
 import { Header } from "../../components/header/header";
 import { Collections } from "./collections/collections";
 import { Summary } from "./summary/summary";
-import { MainPageButton } from "./main-page-button/main-page-button";
 import { useDispatch } from "../../hooks/redux-hooks";
 import { useEffect } from "react";
 import { FETCH_SUMMARY_COLLECTION } from "../../services/constants/summary-constants";
+import { PageButton } from "../../components/page-button/page-button";
+import "./main-page.scss";
 
 export function MainPage() {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ export function MainPage() {
           <Summary />
           <Collections />
         </div>
-        <MainPageButton />
+        <PageButton text="Смотреть все" />
       </div>
       <Footer />
     </div>

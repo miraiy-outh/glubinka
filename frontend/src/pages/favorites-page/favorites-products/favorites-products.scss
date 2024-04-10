@@ -1,0 +1,17 @@
+.favorites-products {
+  margin: 64px 0 180px;
+  min-height: 600px;
+
+  &__header {
+    margin: 0 0 24px 8px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 345px);
+    grid-column-gap: 20px;
+    column-gap: 20px;
+    row-gap: 40px;
+  }
+}

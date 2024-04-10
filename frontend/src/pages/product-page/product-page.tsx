@@ -14,10 +14,15 @@ export function ProductPage() {
   return (
     <div className="product-page">
       <Header />
-      <div className="product-page__container">
-        <Photos images={productInfo.images} />
-        <ProductInfo productInfo={productInfo} />
-      </div>
+      {productInfo ? (
+        <div className="product-page__container">
+          <Photos images={productInfo.images} />
+          <ProductInfo productInfo={productInfo} />
+        </div>
+      ) : (
+        <div>Ошибка</div>
+      )}
+
       <Footer />
     </div>
   );

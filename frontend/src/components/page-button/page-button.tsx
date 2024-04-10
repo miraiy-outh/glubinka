@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import "./main-page-button.scss";
-import { useDispatch } from "../../../hooks/redux-hooks";
+import "./page-button.scss";
+import { useDispatch } from "../../hooks/redux-hooks";
 import {
   PRODUCTS_CHANGE,
   PRODUCTS_COLLECTION_CHANGE,
   PRODUCTS_COLLECTION_FILTER_CHANGE,
-} from "../../../services/constants/products-constants";
+} from "../../services/constants/products-constants";
 
-export function MainPageButton() {
+export function PageButton({ text }: { text: string }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleRootChange = () => {
@@ -27,7 +27,7 @@ export function MainPageButton() {
   };
   return (
     <button className="main-page-button pointer" onClick={handleRootChange}>
-      <p className="main-page-button__text">Смотреть все</p>
+      <p className="main-page-button__text">{text}</p>
     </button>
   );
 }

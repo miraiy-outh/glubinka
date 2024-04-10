@@ -1,0 +1,8 @@
+@import "../../index.scss";
+
+.none-products {
+  display: flex;
+  @include flex-column;
+  align-items: center;
+  gap: 64px;
+}

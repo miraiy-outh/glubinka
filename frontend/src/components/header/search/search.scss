@@ -1,17 +1,18 @@
 .search {
-    display: flex;
-    justify-content: flex-start;
-    gap: 8px;
-    padding: 8px 18px 8px 16px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 6px;
-    width: 700px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 8px 18px 8px 16px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 6px;
+  width: 700px;
 
-    &__text {
-        background-color: var(--transparent);
-        border: 0px solid var(--transparent);
-        color: var(--secondary-color);
-        font-size: var(--paragraph-size);
-        font-weight: var(--medium-weight);
-    }
+  &__text {
+    background-color: var(--transparent);
+    border: 0px solid var(--transparent);
+    color: var(--secondary-color);
+    font-size: var(--paragraph-size);
+    font-weight: var(--medium-weight);
+    width: 100%;
+  }
 }

@@ -1,7 +1,7 @@
-import { Product } from "../product/product";
+import { Product } from "../../pages/products-list/product/product";
 import "./products.scss";
-import { productsSelector } from "../../../services/selectors/products-selectors";
-import { useSelector } from "../../../hooks/redux-hooks";
+import { productsSelector } from "../../services/selectors/products-selectors";
+import { useSelector } from "../../hooks/redux-hooks";
 
 export function Products() {
   const products = useSelector(productsSelector);

@@ -1,0 +1,9 @@
+@import "../../index.scss";
+
+.favorites-page {
+  display: flex;
+  @include flex-column;
+  align-items: center;
+  min-width: 1570px;
+  justify-content: space-between;
+}
