@@ -1,0 +1,18 @@
+@import "../../../index.scss";
+
+.cart-products {
+  @include flex-row;
+  justify-content: space-between;
+  margin: 64px 0 180px 60px;
+  min-height: 600px;
+
+  &__header {
+    margin: 0 0 24px 8px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    @include flex-column;
+    gap: 40px;
+  }
+}

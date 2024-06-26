@@ -1,0 +1,6 @@
+@import "../../../../../index.scss";
+
+.cart-options {
+  @include flex-row;
+  gap: 20px;
+}
