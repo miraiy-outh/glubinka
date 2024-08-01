@@ -9,10 +9,15 @@ import {
   PRODUCTS_COLLECTION_FILTER_CHANGE,
 } from "../../../../services/constants/products-constants";
 
-export function Collection({ id, imgURL, header, title }: TCollection) {
+export function Collection({
+  collectionId,
+  imgURL,
+  header,
+  title,
+}: TCollection) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const collectionName = useSelector(collectionNameSelector(id));
+  const collectionName = useSelector(collectionNameSelector(collectionId));
   const handleRootChange = () => {
     if (collectionName !== null) {
       dispatch({
@@ -22,7 +27,7 @@ export function Collection({ id, imgURL, header, title }: TCollection) {
 
       dispatch({
         type: PRODUCTS_COLLECTION_FILTER_CHANGE,
-        collection: id,
+        collection: collectionId,
       });
       dispatch({
         type: PRODUCTS_CHANGE,

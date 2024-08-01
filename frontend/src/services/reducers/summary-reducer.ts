@@ -6,6 +6,7 @@ import {
 type TSummaryType = "main" | "summary";
 
 export type TSummary = {
+  summaryId: number;
   type: TSummaryType;
   className: string;
   imgURL: string;

@@ -10,6 +10,7 @@ export function Summary() {
       {summaries.map((summary, key) => (
         <SummaryItem
           key={key}
+          summaryId={summary.summaryId}
           type={summary.type}
           className={summary.className}
           imgURL={summary.imgURL}

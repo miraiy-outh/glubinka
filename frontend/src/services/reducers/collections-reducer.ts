@@ -1,7 +1,7 @@
 import { COLLECTION_INIT } from "../constants/collections-constants";
 
 export type TCollection = {
-  id: number;
+  collectionId: number;
   imgURL: string;
   header: string;
   title: string;

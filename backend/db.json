@@ -60,11 +60,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 1,
+        "collectionId": 1,
         "title": ""
       },
       "type": {
-        "id": 1,
+        "typeId": 1,
         "title": "Футболка"
       }
     },
@@ -128,11 +128,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 3,
+        "collectionId": 3,
         "title": ""
       },
       "type": {
-        "id": 2,
+        "typeId": 2,
         "title": "Шорты"
       }
     },
@@ -197,11 +197,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 4,
+        "collectionId": 4,
         "title": ""
       },
       "type": {
-        "id": 3,
+        "typeId": 3,
         "title": "Свитшот"
       }
     },
@@ -265,11 +265,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 6,
+        "collectionId": 6,
         "title": ""
       },
       "type": {
-        "id": 4,
+        "typeId": 4,
         "title": "Брюки"
       }
     },
@@ -333,11 +333,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 6,
+        "collectionId": 6,
         "title": ""
       },
       "type": {
-        "id": 5,
+        "typeId": 5,
         "title": "Верхняя одежда"
       }
     },
@@ -401,11 +401,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 5,
+        "collectionId": 5,
         "title": ""
       },
       "type": {
-        "id": 6,
+        "typeId": 6,
         "title": "Аксессуар"
       }
     },
@@ -447,11 +447,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 1,
+        "collectionId": 1,
         "title": ""
       },
       "type": {
-        "id": 6,
+        "typeId": 6,
         "title": "Аксессуар"
       }
     },
@@ -525,11 +525,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 8,
+        "collectionId": 8,
         "title": ""
       },
       "type": {
-        "id": 1,
+        "typeId": 1,
         "title": "Футболка"
       }
     },
@@ -593,11 +593,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 2,
+        "collectionId": 2,
         "title": ""
       },
       "type": {
-        "id": 2,
+        "typeId": 2,
         "title": "Шорты"
       }
     },
@@ -662,11 +662,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 4,
+        "collectionId": 4,
         "title": ""
       },
       "type": {
-        "id": 3,
+        "typeId": 3,
         "title": "Свитшот"
       }
     },
@@ -730,11 +730,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 3,
+        "collectionId": 3,
         "title": ""
       },
       "type": {
-        "id": 4,
+        "typeId": 4,
         "title": "Брюки"
       }
     },
@@ -798,11 +798,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 2,
+        "collectionId": 2,
         "title": ""
       },
       "type": {
-        "id": 5,
+        "typeId": 5,
         "title": "Верхняя одежда"
       }
     },
@@ -866,11 +866,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 7,
+        "collectionId": 7,
         "title": ""
       },
       "type": {
-        "id": 6,
+        "typeId": 6,
         "title": "Аксессуар"
       }
     },
@@ -912,11 +912,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 8,
+        "collectionId": 8,
         "title": ""
       },
       "type": {
-        "id": 6,
+        "typeId": 6,
         "title": "Аксессуар"
       }
     },
@@ -980,11 +980,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 1,
+        "collectionId": 1,
         "title": ""
       },
       "type": {
-        "id": 1,
+        "typeId": 1,
         "title": "Футболка"
       }
     },
@@ -1048,11 +1048,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 3,
+        "collectionId": 3,
         "title": ""
       },
       "type": {
-        "id": 2,
+        "typeId": 2,
         "title": "Шорты"
       }
     },
@@ -1117,11 +1117,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 4,
+        "collectionId": 4,
         "title": ""
       },
       "type": {
-        "id": 3,
+        "typeId": 3,
         "title": "Свитшот"
       }
     },
@@ -1185,11 +1185,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 6,
+        "collectionId": 6,
         "title": ""
       },
       "type": {
-        "id": 4,
+        "typeId": 4,
         "title": "Брюки"
       }
     },
@@ -1253,11 +1253,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 6,
+        "collectionId": 6,
         "title": ""
       },
       "type": {
-        "id": 5,
+        "typeId": 5,
         "title": "Верхняя одежда"
       }
     },
@@ -1321,11 +1321,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 5,
+        "collectionId": 5,
         "title": ""
       },
       "type": {
-        "id": 6,
+        "typeId": 6,
         "title": "Аксессуар"
       }
     },
@@ -1367,11 +1367,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 1,
+        "collectionId": 1,
         "title": ""
       },
       "type": {
-        "id": 6,
+        "typeId": 6,
         "title": "Аксессуар"
       }
     },
@@ -1445,11 +1445,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 8,
+        "collectionId": 8,
         "title": ""
       },
       "type": {
-        "id": 1,
+        "typeId": 1,
         "title": "Футболка"
       }
     },
@@ -1513,11 +1513,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 2,
+        "collectionId": 2,
         "title": ""
       },
       "type": {
-        "id": 2,
+        "typeId": 2,
         "title": "Шорты"
       }
     },
@@ -1582,11 +1582,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 4,
+        "collectionId": 4,
         "title": ""
       },
       "type": {
-        "id": 3,
+        "typeId": 3,
         "title": "Свитшот"
       }
     },
@@ -1650,11 +1650,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 3,
+        "collectionId": 3,
         "title": ""
       },
       "type": {
-        "id": 4,
+        "typeId": 4,
         "title": "Брюки"
       }
     },
@@ -1718,11 +1718,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 2,
+        "collectionId": 2,
         "title": ""
       },
       "type": {
-        "id": 5,
+        "typeId": 5,
         "title": "Верхняя одежда"
       }
     },
@@ -1786,11 +1786,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 7,
+        "collectionId": 7,
         "title": ""
       },
       "type": {
-        "id": 6,
+        "typeId": 6,
         "title": "Аксессуар"
       }
     },
@@ -1832,11 +1832,11 @@
       "isInFavorite": false,
       "isInCart": false,
       "collection": {
-        "id": 8,
+        "collectionId": 8,
         "title": ""
       },
       "type": {
-        "id": 6,
+        "typeId": 6,
         "title": "Аксессуар"
       }
     }
@@ -1844,7 +1844,7 @@
 
   "summary": [
     {
-      "id": 1,
+      "summaryId": 1,
       "type": "main",
       "className": "a",
       "imgURL": "public/images/main_grid.jpg",
@@ -1852,7 +1852,7 @@
     },
 
     {
-      "id": 2,
+      "summaryId": 2,
       "type": "summary",
       "className": "b",
       "imgURL": "public/images/grid1.jpg",
@@ -1860,7 +1860,7 @@
     },
 
     {
-      "id": 3,
+      "summaryId": 3,
       "type": "summary",
       "className": "c",
       "imgURL": "public/images/grid2.jpg",
@@ -1868,7 +1868,7 @@
     },
 
     {
-      "id": 4,
+      "summaryId": 4,
       "type": "summary",
       "className": "d",
       "imgURL": "public/images/grid3.jpg",
@@ -1876,7 +1876,7 @@
     },
 
     {
-      "id": 5,
+      "summaryId": 5,
       "type": "summary",
       "className": "e",
       "imgURL": "public/images/grid4.jpg",
@@ -1886,42 +1886,42 @@
 
   "collection": [
     {
-      "id": 1,
+      "collectionId": 1,
       "imgURL": "public/images/col1.jpg",
       "header": "База",
       "title": "Базовая коллекция с приятными цветами"
     },
 
     {
-      "id": 2,
+      "collectionId": 2,
       "imgURL": "public/images/col2.jpg",
       "header": "Улица",
       "title": "Скорость и свобода"
     },
 
     {
-      "id": 3,
+      "collectionId": 3,
       "imgURL": "public/images/col3.jpg",
       "header": "Молодость",
       "title": "Наивность с нотками ностальгии"
     },
 
     {
-      "id": 4,
+      "collectionId": 4,
       "imgURL": "public/images/col4.jpg",
       "header": "Спорт",
       "title": "Удобная одежда, не сковывающая движения"
     },
 
     {
-      "id": 5,
+      "collectionId": 5,
       "imgURL": "public/images/col5.jpg",
       "header": "Огонь",
       "title": "Ярко, дерзко, броско"
     },
 
     {
-      "id": 6,
+      "collectionId": 6,
       "imgURL": "public/images/col6.jpg",
       "header": "Техно",
       "title": "Странные формы и цвета"

@@ -7,7 +7,7 @@ export function collectionsSelector(state: RootState) {
 export function collectionNameSelector(id: number) {
   return (state: RootState) => {
     const collection = state.collectionsData.collections.find(
-      (collection) => collection.id === id
+      (collection) => collection.collectionId === id
     );
     return collection ? collection.header : null;
   };

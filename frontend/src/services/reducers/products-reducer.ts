@@ -34,12 +34,12 @@ export type TDetailInfo = {
 };
 
 type TProductType = {
-  id: number;
+  typeId: number;
   title: string;
 };
 
 type TCollection = {
-  id: number;
+  collectionId: number;
   title: string;
 };
 
@@ -248,6 +248,8 @@ export function productsReducer(
           product.price <= state.filter.priceFilter[1]
       );
 
+      console.log(filteredProducts);
+
       if (state.filter.colorFilter.length !== 0) {
         filteredProducts = filteredProducts.filter((product) =>
           product.colors.some((color) =>
@@ -258,7 +260,8 @@ export function productsReducer(
 
       if (state.filter.collectionFilter !== null) {
         filteredProducts = filteredProducts.filter(
-          (product) => product.collection.id === state.filter.collectionFilter
+          (product) =>
+            product.collection.collectionId === state.filter.collectionFilter
         );
       }
 

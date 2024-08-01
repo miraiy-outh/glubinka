@@ -17,7 +17,6 @@ export function Product({
 }) {
   const navigate = useNavigate();
   const handleRouteChange = () => {
-    console.log(productId);
     navigate(`${productId}`);
   };
 

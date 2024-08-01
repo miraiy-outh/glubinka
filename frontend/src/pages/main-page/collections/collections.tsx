@@ -12,7 +12,7 @@ export function Collections() {
         {collections.map((collection, key) => (
           <Collection
             key={key}
-            id={key + 1}
+            collectionId={collection.collectionId}
             imgURL={collection.imgURL}
             header={collection.header}
             title={collection.title}
