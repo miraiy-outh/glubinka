@@ -8,15 +8,17 @@ import { TSummary } from "../reducers/summary-reducer";
 import { TCollection } from "../reducers/collections-reducer";
 import { COLLECTION_INIT } from "../constants/collections-constants";
 
+const url = import.meta.env.VITE_API_URL;
+
 async function getSummaries(): Promise<TSummary[]> {
-  const response = await fetch("http://localhost:3000/summary");
+  const response = await fetch(`${url}/summary`);
   const data = await response.json();
 
   return data as Promise<TSummary[]>;
 }
 
 async function getCollections(): Promise<TCollection[]> {
-  const response = await fetch("http://localhost:3000/collection");
+  const response = await fetch(`${url}/collection`);
   const data = await response.json();
   return data as Promise<TCollection[]>;
 }

@@ -8,8 +8,10 @@ import {
   productsSizeSelector,
 } from "../selectors/products-selectors";
 
+const url = import.meta.env.VITE_API_URL;
+
 async function getProducts(): Promise<TProduct[]> {
-  const response = await fetch("http://localhost:3000/products");
+  const response = await fetch(`${url}/products`);
   const data = await response.json();
 
   return data as Promise<TProduct[]>;
