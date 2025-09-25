@@ -1,7 +1,6 @@
 import { NoneProducts } from "../../../components/none-products/none-products";
 import { useSelector } from "../../../hooks/redux-hooks";
 import { cartProductsSelector } from "../../../services/selectors/products-selectors";
-import { Product } from "../../products-list/product/product";
 import { CartCheck } from "../cart-check/cart-check";
 import { CartProduct } from "./cart-product/cart-product";
 import "./cart-products.scss";

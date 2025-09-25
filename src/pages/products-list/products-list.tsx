@@ -22,7 +22,7 @@ export function ProductsList() {
   const pagesCount = useSelector(pageCountSelector);
   const collectionName = useSelector(productsCurrentCollectionSelector);
 
-  const handlePageChange = (event: ChangeEvent<unknown>, newPage: number) => {
+  const handlePageChange = (_event: ChangeEvent<unknown>, newPage: number) => {
     window.scrollTo(0, 0);
     dispatch({
       type: PRODUCTS_PAGE_CHANGE,
