@@ -217,7 +217,7 @@ export function productsReducer(
       const minPrice = Math.min(...prices);
       const maxPrice = Math.max(...prices);
 
-      let filteredProducts = paginationProducts(
+      const filteredProducts = paginationProducts(
         state.pageNumber,
         action.products
       );
@@ -276,7 +276,7 @@ export function productsReducer(
 
       const pageCount = pagesCount(filteredProducts.length);
 
-      let newFilteredProducts = paginationProducts(
+      const newFilteredProducts = paginationProducts(
         state.pageNumber,
         filteredProducts
       );
