@@ -7,10 +7,10 @@ logs
 */pnpm-debug.log*
 */lerna-debug.log*
 
-*/node_modules
-*/dist
-*/dist-ssr
-*/*.local
+/node_modules
+/dist
+/dist-ssr
+/*.local
 
 # Editor directories and files
 */.vscode/*
